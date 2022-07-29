@@ -1,14 +1,14 @@
-let twoSum = (array, sum) => {
-    let hashMap = {},
-      results = []
+const twoSum = function(nums, target) {
+    const hash = {}; 
 
-        for (let i = 0; i < array.length; i++){
-            if (hashMap[array[i]]){
-                results.push([hashMap[array[i]], array[i]])
-            }else{
-                hashMap[sum - array[i]] = array[i];
-            }
-          }
-          return results;
+    for (let i = 0; i < nums.length; i++) { 
+      const n = nums[i]; 
+      if (hash[target - n] !== undefined) { 
+        return [hash[target - n], i]; 
+      }
+      hash[n] = i; 
     }
-console.log(twoSum([2,7,11,15],9));
+    return []; 
+  }
+  
+  console.log(twoSum([2, 7, 11, 15],9)); 
